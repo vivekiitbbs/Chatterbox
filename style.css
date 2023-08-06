@@ -1,0 +1,26 @@
+.bcg {
+    height: 100vh;
+    width: 100%;
+    background: #E6DADA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #274046, #E6DADA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #274046, #E6DADA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+
+}
+
+.header {
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header.h1 {
+    font-size: 7%;
+    
+   
+}
