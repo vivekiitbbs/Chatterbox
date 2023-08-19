@@ -1,24 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatterbox</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Real-Time Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        header {
+            /* border: 1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        header {
+            FONT-SIZE: 5vh;
+            padding: 0px;
+            margin: 0;
+        }
+
+        header h2 {
+            color: burlywood;
+            margin: 0;
+            font-family: 'ADLaM Display', cursive;
+        }
+
+        #messages {
+            border-radius: 10px;
+            max-width: 50%;
+            background-color: grey;
+            /* border: 1px solid red; */
+            height: 80vh;
+            margin: auto;
+            overflow: auto;
+            font-family: 'ADLaM Display', cursive;
+
+        }
+
+        #messages li {
+            list-style: none;
+            font-size: 20px;
+        }
+
+        /* #messages time {
+            display: block;
+        } */
+
+
+
+        .message {
+            /* border: 1px solid red; */
+            border-radius: 12px 12px 12px 2px;
+            /* border-radius: 10px; */
+            margin: 1% 2%;
+            padding: 1%;
+            float: left;
+            clear: both;
+            background: #F0EB8D;
+            font-family: 'ADLaM Display', cursive;
+        }
+
+
+
+        .middle {
+            /* border: 1px solid red; */
+            border-radius: 10px;
+            margin: 2% 2%;
+            /* padding: 1%; */
+            clear: both;
+            text-align: center;
+            /* position: absolute; */
+            font-family: 'ADLaM Display', cursive;
+
+
+        }
+
+        .time {
+            font-size: 12px;
+        }
+
+        .my-message {
+            /* border: 1px solid red; */
+            border-radius: 12px 12px 2px 12px;
+            margin: 2% 2%;
+            padding: 1%;
+            float: right;
+            clear: both;
+            background: #F0EB8D;
+            font-family: 'ADLaM Display', cursive;
+
+        }
+
+        #form {
+            display: block;
+            margin: auto;
+            text-align: center;
+            /* max-width: 40%; */
+        }
+
+        #input {
+            margin: 3px 0px 1px 3px;
+            padding: 2px;
+            border-radius: 4px;
+            width: 42%;
+            font-family: 'ADLaM Display', cursive;
+
+        }
+
+        .btn {
+            cursor: pointer;
+            margin: 2px 1px 1px 0px;
+            padding: 3px;
+            border-radius: 4px;
+            width: 5%;
+        }
+
+        #loginbody {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 93%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
-<body class="bcg">
-    <div class="header">
+<body>
+    <div id="loginpage">
+        <!-- <form id="login-form">
+            <input id="username" placeholder="Enter your username" autocomplete="off" />
+            <button>Login</button>
+        </form> -->
+        <div id="loginbody">
+            <div class="login-container">
+                <!-- <img src="download-removebg-preview.png" alt="Chatbox" height="7%" width="7%"> -->
+                <h2>Chatterbox</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="uname">Username</label>
+                        <input type="text" id="uname" name="uname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button class="login-button" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
 
-        <img src="/download-removebg-preview.png"
-            alt="Chatbox" height="7%" width="7%">
-        <h2>Chatterbox</h2>
     </div>
-    <div class="message">
-        <form action=""></form>
-        
+    <div id="mainbody">
+        <header>
+            <!-- <img src="download-removebg-preview.png" alt="Chatbox" height="7%" width="7%"> -->
+            <h2>Chatterbox</h2>
+        </header>
+
+        <div id="messages">
+
+        </div>
+
+        <div class="send">
+            <form action="#" id="form">
+                <input type="text" id="input">
+                <button class="btn" type="submit">Send</button>
+            </form>
+        </div>
     </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            const socket = io();
+            $('#mainbody').hide();
+
+          
+
+            // User login
+            $('#login-form').submit(() => {
+
+                const username = $('#uname').val();
+                socket.emit('new user', username);
+                $('#loginpage').hide();
+                $('#mainbody').show();
+                return false;
+            });
+
+            // const username = prompt('Enter your username:'); // Prompt user for username
+            // socket.emit('new user', username); // Send the username to the server
+
+            socket.on('user-joined', (username) => {
+                $('#messages').append(`<div class="middle"> <strong>${username}</strong> joined the chat</div> `)
+            });
+
+
+            $('#form').submit(() => {
+                const message = $('#input').val();
+                const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                socket.emit('chat message', message);
+                $('#input').val('');
+                // Append your message with the 'my-message' class
+                // $('#messages').append($('<li>').text(message).addClass(' my-message'));
+                $('#messages').append($(`  <li class="my-message" > <div class="time">   ${timestamp} </div>${message}</li>`));
+                return false;
+            });
+
+            socket.on('chat message', (data) => {
+                const { username, message, timestamp } = data;
+                // const messageClass = username === users[socket.id] ? 'message' : ''; // Add 'my-message' class if it's your message
+                // $('#messages').append($(`<li class="${messageClass}"><strong>${username}: </strong>${message}</li>`));
+
+                $('#messages').append($(`  <li class="message" > <div class="time">   ${timestamp} </div><strong>${username}: </strong>${message}</li>`));
+            });
+
+            socket.on('left', (username) => {
+                $('#messages').append(`<div class="middle"> <strong>${username}</strong> left the chat</div> `)
+            });
+
+        });
+
+    </script>
 </body>
 
 </html>

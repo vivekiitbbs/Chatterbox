@@ -1,2 +1,0 @@
-# Chatweb
-Webnd project

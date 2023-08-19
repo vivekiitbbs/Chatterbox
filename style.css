@@ -1,17 +1,4 @@
-.bcg {
-    height: 100vh;
-    width: 100%;
-    background: #E6DADA;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #274046, #E6DADA);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #274046, #E6DADA);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-repeat: no-repeat;
-
-}
-
-.header {
+header {
     border: 1px solid red;
     display: flex;
     align-items: center;
@@ -21,6 +8,73 @@
 
 .header.h1 {
     font-size: 7%;
-    
-   
+
+}
+
+.container {
+    max-width: 50%;
+    background-color: aquamarine;
+    border: 1px solid red;
+    height: 60vh;
+    margin: auto;
+    overflow: auto;
+
+}
+
+.msg {
+    background-color: rgb(117, 83, 83);
+}
+
+.left {
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: 2% 2%;
+    padding: 1%;
+    float: left;
+    clear: both;
+}
+
+
+
+.middle {
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: 2% 2%;
+    padding: 1%;
+    clear: both;
+    text-align: center;
+    /* position: absolute; */
+}
+
+.right {
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: 2% 2%;
+    padding: 1%;
+    float: right;
+    clear: both;
+
+}
+
+#send-container {
+    display: block;
+    margin: auto;
+    text-align: center;
+    /* max-width: 40%; */
+}
+
+#msginp {
+    margin: 4px;
+    padding: 2px;
+    border-radius: 4px;
+    width: 42%;
+
+}
+
+.btn {
+    cursor: pointer;
+    margin: 4px;
+    padding: 2px;
+    border-radius: 4px;
+    width: 5%;
 }
